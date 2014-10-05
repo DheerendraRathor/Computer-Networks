@@ -6,9 +6,11 @@
  */
 
 #include <iostream>
-#include "trie.h"
-#include "utils.h"
 #include <vector>
+
+#include "utils.h"
+#include "trie.h"
+
 using namespace std;
 
 int main() {

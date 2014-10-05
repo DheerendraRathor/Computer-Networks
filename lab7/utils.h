@@ -5,8 +5,8 @@
  *      Author: dheerendra
  */
 
-#ifndef UTILS_H_
-#define UTILS_H_
+#ifndef NETWORKS_UTILS_H_
+#define NETWORKS_UTILS_H_
 
 #include<string>
 
@@ -40,4 +40,4 @@ struct match {
     void generateNetwork();
 };
 
-#endif /* UTILS_H_ */
+#endif /* NETWORKS_UTILS_H_ */

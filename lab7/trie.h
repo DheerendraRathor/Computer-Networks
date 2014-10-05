@@ -5,8 +5,8 @@
  *      Author: dheerendra
  */
 
-#ifndef TRIE_H_
-#define TRIE_H_
+#ifndef NETWORKS_TRIE_H_
+#define NETWORKS_TRIE_H_
 
 #include<string>
 
@@ -21,6 +21,8 @@ struct Node {
      index of ip-address and subnet number in a vector storing them*/
 
     Node(char x); /** constructor declaration */
+
+    ~Node(); /** destructor declaration */
 };
 
 /**
@@ -31,6 +33,7 @@ struct Trie {
     Trie();         /** default constructor declaration */
     void insert(std::string, int); /** insert string and it's index declaration */
     int getindex(std::string); /** declaration for getting index of prefix-matched string */
+    ~Trie(); /** destructor declaration */
 };
 
-#endif /* TRIE_H_ */
+#endif /* NETWORKS_TRIE_H_ */

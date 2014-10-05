@@ -6,6 +6,7 @@
  */
 
 #include "utils.h"
+
 #include <sstream>
 #include <bitset>
 #include <iostream>

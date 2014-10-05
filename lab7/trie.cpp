@@ -6,6 +6,7 @@
  */
 
 #include "trie.h"
+
 #include <cstdlib>
 #include <iostream>
 using namespace std;
@@ -19,6 +20,13 @@ Node::Node(char x) {
     index = -1; /** default value of index is -1 (useful when no ip is matched) */
     this->child[0] = NULL;
     this->child[1] = NULL;
+}
+
+/**
+ * Implementing Node destructor
+ */
+Node::~Node(){
+    delete[] *child;
 }
 
 /**
@@ -86,5 +94,12 @@ int Trie::getindex(string s) {
         }
     }
     return ans;
+}
+
+/**
+ * Implementing destructor
+ */
+Trie::~Trie(){
+    delete root;
 }
 
