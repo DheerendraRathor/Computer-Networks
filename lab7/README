@@ -1,0 +1,8 @@
+To compile and create executable run
+  make
+
+To run test cases:
+  make test
+  
+To clean:
+  make clean
