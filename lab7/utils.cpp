@@ -14,13 +14,17 @@
 using namespace std;
 
 /* Implementing default constructor */
-match::match() {
+Match::Match() {
+}
+
+/*Implementing default destructor */
+Match::~Match() {
 }
 
 /**
  * Implementing non-default constructor
  */
-match::match(string ip, string subnet) {
+Match::Match(string ip, string subnet) {
     this->ip = ip;
     this->subnet = subnet;
     network = "";
@@ -30,7 +34,7 @@ match::match(string ip, string subnet) {
 /**
  * Generating network address of length network bits + subnet bits
  */
-void match::generateNetwork() {
+void Match::generateNetwork() {
     stringstream ip_ss(this->ip);
     stringstream subnet_ss(this->subnet);
     string ip_token, subnet_token;
@@ -44,11 +48,12 @@ void match::generateNetwork() {
         subnet_iss >> subnet_int;
         bitset<8> temp(ip_int & subnet_int); /** Getting 8 bit network address */
         network += temp.to_string(); /** appending new byte to previous address */
-        try{
+        try {
             subnet_no += subnetCount(subnet_int); /** Getting network bits + subnet bits */
-        } catch (const char* e){
+        } catch (const char* e) {
             /** Terminating program on invalid subnet mast */
-            cerr<<e<<" Sub-net Mask entered is "<<this->subnet<<" which is not a valid sub-net"<<endl;
+            cerr << e << " Sub-net Mask entered is " << this->subnet
+                    << " which is not a valid sub-net" << endl;
             terminate();
         }
     }
@@ -61,26 +66,26 @@ void match::generateNetwork() {
  */
 int subnetCount(int num) {
     switch (num) {
-        case 0:
-            return 0;
-        case 128:
-            return 1;
-        case 192:
-            return 2;
-        case 224:
-            return 3;
-        case 240:
-            return 4;
-        case 248:
-            return 5;
-        case 252:
-            return 6;
-        case 254:
-            return 7;
-        case 255:
-            return 8;
-        default:
-            throw "Bad sub-net Exception occured";
+    case 0:
+        return 0;
+    case 128:
+        return 1;
+    case 192:
+        return 2;
+    case 224:
+        return 3;
+    case 240:
+        return 4;
+    case 248:
+        return 5;
+    case 252:
+        return 6;
+    case 254:
+        return 7;
+    case 255:
+        return 8;
+    default:
+        throw "Bad sub-net Exception occured";
     }
 }
 

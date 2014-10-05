@@ -14,7 +14,7 @@
 using namespace std;
 
 int main() {
-    vector<match> forward; /** Vector for storing input IP/Mask pair */
+    vector<Match> forward; /** Vector for storing input IP/Mask pair */
     string ip, subnet;
     cin >> ip >> subnet; /** reading header line */
     while (1) {
@@ -22,7 +22,7 @@ int main() {
         if (ip == "default")
             break;
         cin >> subnet;
-        match temp(ip, subnet);
+        Match temp(ip, subnet);
         forward.push_back(temp);
     }
 

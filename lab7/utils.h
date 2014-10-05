@@ -25,16 +25,19 @@ std::string ipToBinaryString(std::string ip);
 /**
  * structure for storing row of forwarding table
  */
-struct match {
+struct Match {
     std::string ip;         /** IP address */
     std::string subnet;     /** subnet address */
     std::string network;    /** Network address in binary (length = network + subnet bits) */
 
     /** default constructor declaration */
-    match();
+    Match();
+
+    /** default destructor declaration */
+    ~Match();
 
     /** constructor declaration */
-    match(std::string, std::string);
+    Match(std::string, std::string);
 
     /** Helper function declaration for generating network address from ip and subnet mast */
     void generateNetwork();
